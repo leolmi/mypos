@@ -1,0 +1,17 @@
+.data-monitor {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.data-monitor .data-distance {
+  font-size: 40px;
+}
+
+
+@media(max-width: 550px), (max-height: 550px) {
+  .data-monitor .data-distance {
+    font-size: 20px;
+  }
+}

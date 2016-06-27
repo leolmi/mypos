@@ -1,0 +1,8 @@
+<div ng-controller="RouteCtrl" class="modal-route">
+  <h1><i class="fa" ng-class="getModeIcon()"></i> {{routeInfo.way.title}}</h1>
+  <pre>{{routeInfo.info}}</pre>
+  <button class="btn btn-primary btn-route-details" ng-hide="details" ng-click="showDetails()">Show Details</button>
+  <div class="route-details" ng-show="details">
+    <route-detail ng-repeat="d in routeInfo.details" detail-index="$index+1" ng-model="d"></route-detail>
+  </div>
+</div>

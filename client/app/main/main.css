@@ -1,0 +1,110 @@
+#map-canvas {
+  height: 100%;
+  width: 100%;
+}
+
+#map-finder {
+  margin-top: 10px;
+}
+
+.working-container.main {
+  height: 100%;
+}
+
+.finder {
+  position: absolute;
+  width: calc(100% - 200px);
+  width: -webkit-calc(100% - 200px);
+  z-index: 920;
+  top: 4px;
+  margin: 0 80px;
+}
+.finder > i {
+  position: absolute;
+  right: 6px;
+  font-size: 16px;
+  top: 2px;
+}
+
+.show-route {
+  position: absolute;
+  right: 10px;
+  z-index: 920;
+  top: 40px;
+  color: orange;
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 10;
+  bottom: 80px;
+  right: 100px;
+  font-size: 100px;
+}
+
+
+.menu-item-icon {
+  color: yellowgreen;
+  margin-right: 8px;
+  margin-left: -8px;
+}
+
+.dropdown-menu > .disabled > a > i.menu-item-icon {
+  color: #ccc;
+}
+
+.map-header {
+  position: absolute;
+  width: calc(100% - 170px);
+  width: -webkit-calc(100% - 170px);
+  top: 40px;
+  height: 24px;
+  z-index: 1;
+  left: 130px;
+  font-weight: bold;
+  overflow: hidden;
+}
+.map-header .map-title {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.map-header .map-title > .fixed {
+  font-weight: normal;
+  font-size: .8em;
+  margin-left: 20px;
+}
+
+.map-header .map-header-tools {
+  float: right;
+}
+.map-header .map-header-tools > i {
+  display: inline-block;
+  font-size: 2em;
+  margin: 8px;
+}
+
+.map-name {
+  color: orangered;
+}
+.map-name.private {
+  color: inherit;
+}
+
+
+
+@media(max-width: 400px) {
+  .finder {
+    margin: 30px 40px;
+    width: calc(100% - 50px);
+    width: -webkit-calc(100% - 50px);
+  }
+}
+
+@media(max-width: 550px), (max-height: 550px) {
+  .menu-btn {
+    bottom: 32px;
+    right: 50px;
+    font-size: 70px;
+  }
+}

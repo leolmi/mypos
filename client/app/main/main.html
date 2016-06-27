@@ -1,0 +1,64 @@
+<!-- WORKING -->
+<div class="working-container main" ng-show="loading">
+  <div class="working"></div>
+</div>
+
+<!-- FINDER -->
+<input id="map-finder" class="form-control input-sm" width-offset="10" type="text">
+
+<!-- HEADER - TOOLS -->
+<div class="map-header" ng-hide="overpage">
+  <div class="map-title"><span class="fixed">map:</span>{{session.map.name}}  <span class="fixed">user:</span>{{session.nick}}</div>
+</div>
+
+<!-- MENU -->
+<div class="dropup menu-btn" ng-hide="overpage">
+  <i id="dLabel" class="fa fa-bars as-button" ng-click="openMenu($event)"></i>
+  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
+    <li ng-repeat="item in menu" ng-class="{'divider':item.divider, 'disabled':item.disabled && item.disabled(), 'active':item.active && item.active()}">
+      <a ng-if="!item.divider" href="#" ng-click="item.action($event)">
+        <i class="menu-item-icon fa" ng-class="item.icon" ng-show="item.icon"></i>
+        {{item.caption}}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- MAP -->
+<div id="map-canvas" ng-class="{'blur':overpage || modalActive}"></div>
+
+<!-- OVERPAGES -->
+<div class="over-page" ng-class="{'active':overpage}">
+  <div class="over-page-content">
+    <i class="fa fa-3x fa-times as-button overlay-times" ng-click="closeOverpage()"></i>
+    <div class="overpage-body" ng-if="overpage.template" ng-include="overpage.template"></div>
+  </div>
+  <div class="overlay" ng-click="closeOverpage()"></div>
+</div>
+
+<!-- CENTER -->
+<div class="map-center" ng-hide="overpage">
+  <div class="map-center-H"></div>
+  <div class="map-center-V"></div>
+</div>
+
+
+<div class="data-monitor">
+  <!--<div class="data-distance" ng-hide="session.center.length">distance:{{session.distance}}</div>-->
+  <div class="data-distance">distance: {{session.distance}}</div>
+</div>
+
+<!-- CHAT -->
+<!--<chat></chat>-->
+
+<!-- CENTER BUTTON -->
+<!--<i class="fa fa-bullseye as-button big-button map-rightbottom-button" ng-hide="overpage" ng-click="execOnPosition()"></i>-->
+<!-- MAP BUTTON -->
+<!--<i class="fa fa-map as-button big-button map-righttop-button" ng-hide="overpage" ng-click="execMaps()"></i>-->
+<!--SHARE BUTTON -->
+<i class="fa fa-crosshairs as-button big-button map-leftbottom-button" ng-hide="overpage" ng-click="execCenter()"></i>
+<!-- ROUTE BUTTON -->
+<!--<i class="fa fa-map-signs as-button big-button map-lefttop-button" ng-show="!overpage && existsRoute()" ng-click="execRoute()"></i>-->
+
+
+

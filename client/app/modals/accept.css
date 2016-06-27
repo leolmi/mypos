@@ -1,0 +1,9 @@
+.modal-accept .invite-header-image {
+  height: 140px;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+.modal-accept .small-text {
+  font-size: 0.8em;
+  margin: 0;
+}

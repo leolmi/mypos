@@ -1,0 +1,23 @@
+<div class="chat">
+  <div class="chat-messages">
+    <div class="chat-message" ng-class="{'important': m.type=='important', 'mine':m.user==user.name}"
+         ng-repeat="m in messages | orderBy:'timestamp'">
+      <div ng-if="m.user==user.name" class="left-triangle"></div>
+      <div class="chat-message-header row">
+        <span class="chat-message-time">{{getDate(m.timestamp)}}</span>
+        <span class="chat-message-user">{{m.user}}</span>
+        <i ng-if="m.icon" class="fa">{{m.icon}}</i>
+      </div>
+      <div class="chat-message-text">{{m.text}}</div>
+      <div ng-if="m.user!=user.name" class="right-triangle"></div>
+    </div>
+  </div>
+  <!--<md-divider></md-divider>-->
+  <div class="chat-message-editor">
+    <textarea class="form-control" ng-model="message.text" ng-maxlength="chatOptions.maxlength" rows="3"></textarea>
+    <!--<icon-chooser ng-model="message.icon" options="iconOptions"></icon-chooser>-->
+    <!--<md-button ng-hide="chatOptions.enter" class="md-icon-button" ng-click="sendMessage()">-->
+      <!--<md-icon class="material-icons">send</md-icon>-->
+    <!--</md-button>-->
+  </div>
+</div>

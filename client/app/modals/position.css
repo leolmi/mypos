@@ -1,0 +1,12 @@
+.modal-position .working-container {
+  position: relative;
+  height: 50px;
+  background: transparent;
+}
+.modal-position .working-container > .working {
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-width: 10px;
+  margin-top: -10px;
+}

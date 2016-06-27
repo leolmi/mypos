@@ -1,0 +1,64 @@
+.big-button {
+  font-size: 100px;
+  position: absolute;
+}
+
+.map-rightbottom-button {
+  bottom: 100px;
+  right: 100px;
+}
+.map-righttop-button {
+  top: 100px;
+  right: 100px;
+}
+.map-leftbottom-button {
+  bottom: 100px;
+  left: 100px;
+}
+.map-lefttop-button {
+  top: 100px;
+  left: 100px;
+}
+
+@media(max-width: 550px) {
+  .big-button {
+    font-size: 70px;
+  }
+  .map-rightbottom-button{
+    right: 50px;
+    bottom: 50px;
+  }
+  .map-righttop-button {
+    right: 50px;
+    top: 50px;
+  }
+  .map-leftbottom-button{
+    left: 50px;
+    bottom: 50px;
+  }
+  .map-lefttop-button {
+    left: 50px;
+    top: 50px;
+  }
+}
+@media(max-height: 550px) {
+  .big-button {
+    font-size: 80px;
+  }
+  .map-rightbottom-button{
+    right: 50px;
+    bottom: 50px;
+  }
+  .map-righttop-button {
+    right: 50px;
+    top: 50px;
+  }
+  .map-leftbottom-button{
+    left: 50px;
+    bottom: 50px;
+  }
+  .map-lefttop-button {
+    left: 50px;
+    top: 50px;
+  }
+}

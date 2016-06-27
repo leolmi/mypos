@@ -1,0 +1,80 @@
+.modal-header{
+  font-weight: bold;
+}
+
+.modal-primary .modal-header,
+.modal-info .modal-header,
+.modal-success .modal-header,
+.modal-warning .modal-header,
+.modal-danger .modal-header {
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+}
+.modal-primary .modal-header {
+  background: #428bca;
+}
+.modal-info .modal-header {
+  background: #5bc0de;
+}
+.modal-success .modal-header {
+  background: #5cb85c;
+}
+.modal-warning .modal-header {
+  background: #f0ad4e;
+}
+.modal-danger .modal-header {
+  background: #d9534f;
+}
+.modal-popup .modal-header {
+  /*background: url('../../../assets/images/bg.jpg') no-repeat;*/
+  background: yellowgreen;
+  color: #222;
+}
+
+.modal-primary .modal-header,
+.modal-info .modal-header,
+.modal-success .modal-header,
+.modal-warning .modal-header,
+.modal-danger .modal-header,
+.modal-popup .modal-header,
+.modal-footer,
+.modal-content {
+  border-radius: 0;
+}
+
+.modal-body {
+  color: #444;
+}
+
+.label-alone {
+  display: block;
+  margin: 10px 0;
+}
+.label-alone > i {
+  font-size: 16px;
+}
+
+.modal-dialog {
+  font-variant: small-caps;
+  text-rendering: optimizeLegibility;
+}
+.modal-dialog .btn {
+  padding: 4px 10px;
+  border-radius: 0;
+}
+
+.modal-product {
+  position: absolute;
+  font-size: 11px;
+  bottom: 20px;
+  color: #aaa;
+}
+
+@media (max-width: 500px) {
+  .modal-dialog {
+    margin: 0;
+  }
+  .modal-body label {
+    margin-bottom: 0;
+  }
+}

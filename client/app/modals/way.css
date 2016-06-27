@@ -1,0 +1,29 @@
+.modal-way i {
+  font-size: 2em;
+}
+
+.modal-way .through-point {
+  padding-right: 30px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.modal-way .through-point> i {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.modal-way .label-container {
+  position: relative;
+  display: block;
+  line-height: 36px;
+}
+.modal-way .label-container > i {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 4px;
+}
+.modal-way .grey-text {
+  width: 100%;
+  text-align: center;
+}

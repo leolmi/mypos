@@ -1,0 +1,16 @@
+<div ng-controller="PositionCtrl" class="modal-position">
+  <label>Position</label>
+  <pre>{{pos}}</pre>
+  <label>Location</label>
+  <div class="working-container" ng-show="geocoding">
+    <div class="working"></div>
+  </div>
+  <pre ng-show="result">{{result}}</pre>
+  <pre ng-show="error" style="color:red;">{{error}}</pre>
+  <label>Description</label>
+  <textarea class="form-control input-sm vertical" rows="2" ng-model="marker.title"></textarea>
+  <div class="form-group form-group-sm">
+    <label>Marker Label</label>
+    <input type="text" class="form-control" maxlength="1" ng-model="marker.label">
+  </div>
+</div>

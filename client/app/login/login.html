@@ -1,0 +1,54 @@
+<div class="background"></div>
+
+<header class="hero-unit">
+  <i class="fa fa-map-marker fa-jump"></i>
+  <div class="login-title">
+    <p ng-show="loading">Logging in...</p>
+    <p ng-hide="loading">{{signup ? 'Sign up for' : 'Log in'}} {{product.name}}</p>
+    <p ng-hide="loading">to share positions in real time</p>
+  </div>
+</header>
+
+<div class="login-content">
+  <div class="working-container" ng-show="loading">
+    <div class="working"></div>
+  </div>
+  <p ng-show="loading">Logging in...</p>
+  <div class="login-form" ng-hide="loading">
+    <form class="form" name="formlgn" novalidate>
+      <div class="row">
+        <div class="form-group" ng-class="{ 'has-error': formlgn.name.$invalid && submitted }">
+          <label>Map</label>
+          <input id="default-control" type="text" name="name" class="form-control" ng-model="map.name" required mongoose-error>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': formlgn.password.$invalid && submitted }">
+          <label>Password</label>
+          <input type="password" name="password" class="form-control" ng-model="map.password" ng-minlength="3" ng-required="!recovering" mongoose-error/>
+        </div>
+        <div class="form-group" ng-class="{'has-error': formlgn.nick.$invalid && submitted }">
+          <label>Nick</label>
+          <input type="text" name="nick" class="form-control" ng-model="map.nick" required mongoose-error/>
+        </div>
+        <!--<p class="grey-text">{{map.id}}</p>-->
+      </div>
+      <div class="form-group has-error">
+        <p class="help-block" ng-show="formlgn.name.$error.mongoose && submitted && !recovering">Existing account, recover your password if you've forgotten.</p>
+        <p class="help-block" ng-show="formlgn.name.$error.required && formlgn.password.$error.required && submitted && !recovering">Enter a valid name and a password of at least 3 characters.</p>
+        <p class="help-block" ng-show="formlgn.name.$error.name && submitted">Enter a valid name.</p>
+        <p class="help-block" ng-show="formlgn.nick.$error.required && submitted">Enter a nickname by which you present yourself on the map.</p>
+        <p class="help-block" ng-show="(formlgn.password.$error.minlength || formlgn.password.$error.required) && submitted && !recovering"> Password must be at least 3 characters.</p>
+        <p class="help-block" ng-show="formlgn.password.$error.mongoose">{{ errors.password }}</p>
+        <p class="help-block">{{ errors.other }}</p>
+      </div>
+      <div class="buttons-container">
+        <div class="btn-warning aslink" ng-click="go(formlgn, true)">Create</div>
+        <!--<div class="btn-danger aslink" ng-click="test()">Test</div>-->
+        <div class="btn-primary aslink on-right" ng-click="go(formlgn, false)">Log in</div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer class="footer login-footer">
+  <p>{{product.name}} v.{{product.version}} | <a href="https://github.com/leolmi/mypos/issues?state=open"><i class="fa fa-github"></i> Issues</a></p>
+</footer>

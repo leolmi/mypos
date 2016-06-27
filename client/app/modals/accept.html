@@ -1,0 +1,10 @@
+<div class="modal-accept center-text" ng-controller="AcceptCtrl">
+  <img class="invite-header-image" src="assets/images/invite.png">
+  <p>You are invited on the map</p>
+  <h1><strong>{{modal.context.data.map.name}}</strong></h1>
+  <div ng-show="modal.context.data.invitation.userMessage">
+    <label>Owner says:</label>
+    <pre>{{modal.context.data.invitation.userMessage}}</pre>
+  </div>
+  <p ng-show="expdays" class="small-text grey-text">This invitation will expire in {{expdays}} days</p>
+</div>

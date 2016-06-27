@@ -1,0 +1,36 @@
+.modal-route .btn-route-details {
+  float: right;
+}
+
+.route-details {
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.route-details .route-detail {
+  padding: 10px;
+  background-color: rgba(154, 205, 50, 0.2);
+  margin-bottom: 2px;
+  position: relative;
+}
+.route-details .route-detail:hover {
+  background-color: rgba(154, 205, 50, 0.6);
+}
+.route-details .route-detail > .detail-index {
+  width: 60px;
+  display: table-cell;
+  font-size: 3em;
+  max-height: 40px;
+  overflow: hidden;
+  vertical-align: middle;
+  color: rgba(1,1,1,.1);
+}
+.route-details .route-detail > .detail-description {
+  display: table-cell;
+}
+
+
+
+.route-details .route-detail > .detail-description > .detail-instructions {
+  font-size: 0.8em;
+}

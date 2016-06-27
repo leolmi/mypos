@@ -1,0 +1,17 @@
+<!-- TESTS -->
+<div class="tests" ng-class="{'blur':overpage || modalActive}">
+  <h1>Test vari...</h1>
+  <div class="test-buttons">
+    <p ng-repeat-start="test in tests" ng-show="test.description">{{test.description}}</p>
+    <button ng-repeat-end class="btn btn-primary" ng-click="test.action()">{{test.name}}</button>
+  </div>
+</div>
+
+<!-- OVERPAGES -->
+<div class="over-page" ng-class="{'active':overpage}">
+  <div class="over-page-content">
+    <i class="fa fa-3x fa-times as-button overlay-times" ng-click="closeOverpage()"></i>
+    <div class="overpage-body" ng-if="overpage.template" ng-include="overpage.template"></div>
+  </div>
+  <div class="overlay" ng-click="closeOverpage()"></div>
+</div>

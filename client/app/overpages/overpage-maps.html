@@ -1,0 +1,30 @@
+<div class="ovepage-maps row" ng-controller="MapsCtrl">
+  <search-box ng-model="searchText"></search-box>
+  <div class="maps-container overpage-items" height-offset="230">
+    <div class="map-row private-map-row" ng-hide="searchText"
+         ng-class="{'active':!current}" ng-click="set()">
+      <i class="fa fa-map map-row-icon"></i>
+      <i class="fa fa-check-circle over-icon map-row-current" ng-show="!current"></i>
+      <div class="map-row-content">
+        <h3>Private Map {{current ? '' : '(current)'}}</h3>
+        <p class="map-row-content-desc">Private map with no shared elements.</p>
+      </div>
+    </div>
+    <div class="map-row" ng-repeat="m in maps | filter:searchText | orderBy:'invite'"
+         ng-class="{'active':m._id==current, 'invite-to':m.invite}" ng-click="set(m)">
+      <i class="fa fa-map map-row-icon"></i>
+      <i class="fa fa-certificate over-icon map-row-new" ng-show="m.invite && !m.invite.accepted"></i>
+      <i class="fa fa-check-circle  over-icon map-row-current" ng-show="m._id==current"></i>
+      <div class="map-row-content">
+        <h3>{{m.name}} {{m._id==current ? '(current)' : ''}} {{m.invite && !m.invite.accepted ? '(new)' : ''}}</h3>
+        <p class="map-row-content-desc">{{m.description}}</p>
+      </div>
+      <i class="fa fa-pencil map-row-icon right-2 as-button" ng-hide="m.invite" ng-click="editMap(m)"></i>
+      <i class="fa fa-trash map-row-icon right-1 as-button" ng-click="deleteMap(m)"></i>
+    </div>
+  </div>
+  <div class="overpage-buttons">
+    <p>{{helpStr}}</p>
+    <i class="fa fa-plus-circle as-button big-button" ng-click="editMap()" help-message="Create new map"></i>
+  </div>
+</div>

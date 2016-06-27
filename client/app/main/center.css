@@ -1,0 +1,26 @@
+.map-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+  width: 101px;
+  height: 101px;
+  /*border-radius: 50px;*/
+  /*border: #000 1px solid;*/
+  pointer-events: none;
+}
+
+.map-center .map-center-H {
+  border-top: #111 1px solid;
+  top: 49px;
+  position: relative;
+  margin: 0 20px;
+}
+
+.map-center .map-center-V {
+  height: 60px;
+  border-left: #111 1px solid;
+  left: 49px;
+  position: relative;
+  margin: 20px 0;
+}

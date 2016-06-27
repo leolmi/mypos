@@ -1,0 +1,23 @@
+.search-box {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 100%
+}
+.search-box > i {
+  position: absolute;
+  top: 10px;
+  font-size: 1.6em;
+}
+.search-box > .search-icon {
+  left: 10px;
+}
+.search-box > .close-icon {
+  right: 10px;
+}
+.search-box > .form-group {
+
+}
+.search-box > input {
+  padding: 0 40px
+}

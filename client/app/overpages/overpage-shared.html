@@ -1,0 +1,43 @@
+<div class="overpage-shared row" ng-controller="SharedCtrl">
+  <search-box ng-model="searchText"></search-box>
+  <div class="type-filter">
+    show elements:
+    <input type="checkbox" ng-model="settings.shared.points"> points
+    <input type="checkbox" ng-model="settings.shared.ways"> ways
+    <input type="checkbox" ng-model="settings.shared.positions"> users
+  </div>
+  <div class="overpage-items" height-offset="250">
+    <div class="shared-item shared-item-point" ng-click="activate(p)"
+         ng-class="{'active':p==activeObject}" ng-show="settings.shared.points"
+         ng-repeat="p in data.points | filter:searchText" >
+      <i class="fa fa-map-marker shared-typeicon"></i>
+      <div class="shared-item-title">{{p.title}}</div>
+      <i class="fa fa-crosshairs shared-tool-button indent-right-2 as-button" ng-click="pointCenter(p)"></i>
+      <i class="fa fa-pencil shared-tool-button indent-right-1 as-button" ng-show="isMine(p)" ng-click="editPoint(p)"></i>
+      <i class="fa fa-trash shared-tool-button as-button" ng-show="isMine(p)" ng-click="pointDelete(p)"></i>
+    </div>
+    <div class="shared-item shared-item-way" ng-click="activate(w)"
+         ng-class="{'active':w==activeObject}" ng-show="settings.shared.ways"
+         ng-repeat="w in data.ways | filter:searchText" >
+      <i class="fa fa-code-fork shared-typeicon"></i>
+      <div class="shared-item-title">{{w.title}}</div>
+      <i class="fa shared-tool-button indent-right-2 as-button" ng-click="wayToggle(w)"
+         ng-class="{'fa-toggle-on':wayIsActive(w), 'fa-toggle-off':!wayIsActive(w), 'visible':wayIsActive(w)}"
+         ng-disabled="idle"></i>
+      <i class="fa fa-pencil shared-tool-button indent-right-1 as-button" ng-show="isMine(w)" ng-click="editWay(w)"></i>
+      <i class="fa fa-trash shared-tool-button as-button" ng-show="isMine(w)" ng-click="wayDelete(w)"></i>
+    </div>
+    <div class="shared-item shared-item-position" ng-click="activate(u)"
+         ng-class="{'active':u==activeObject}" ng-show="settings.shared.positions"
+         ng-repeat="u in data.positions | filter:searchText" >
+      <i class="fa fa-user shared-typeicon"></i>
+      <div class="shared-item-title">{{u.title}}</div>
+      <i class="fa fa-crosshairs shared-tool-button indent-right as-button" ng-click="pointCenter(u)"></i>
+    </div>
+  </div>
+  <div class="overpage-buttons">
+    <p>{{helpStr}}</p>
+    <i class="fa fa-camera as-button big-button" ng-click="execSnapshot()" help-message="Share a snapshot" ng-disabled="true"></i>
+    <i class="fa fa-code-fork as-button big-button" ng-click="editWay()" help-message="Share a route"></i>
+  </div>
+</div>

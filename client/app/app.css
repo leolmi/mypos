@@ -1,0 +1,274 @@
+
+/**
+ * Bootstrap Fonts
+ */
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'),
+  url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+/**
+ *Font Awesome Fonts
+ */
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.1.0');
+  src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+  url('../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+  url('../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
+  url('../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #111;
+  padding: 0.2em 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #ccc;
+  color: #111;
+  height: 100%;
+  font-variant: small-caps;
+  text-rendering: optimizeLegibility;
+}
+
+body > [ui-view] {
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: url('../assets/images/bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -1;
+}
+
+.blur {
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -ms-filter: blur(4px);
+  -o-filter: blur(4px);
+  filter: blur(4px);
+}
+
+.primary {
+  color:#fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+.success {
+  color:#fff;
+  background-color: #47a447;
+  border-color: #398439;
+}
+.warning {
+  color:#fff;
+  background-color: #ed9c28;
+  border-color: #d58512;
+}
+.danger {
+  color:#fff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+}
+
+input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+/*//////////////////////////////*/
+/*//////////////////////////////*/
+/* JUMP: */
+
+.fa-jump {
+  -webkit-animation: jump 2s infinite;
+  animation: jump 2s infinite;
+
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+.fa-jump-jump {
+  -webkit-animation: jump 1s infinite;
+  animation: jump 1s infinite;
+
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+
+}
+
+
+.fa-jump:hover {
+  -webkit-animation: pendular 5s ease-in-out infinite;
+  animation: pendular 5s ease-in-out infinite;
+}
+
+/*//////////////////////////////*/
+/*//////////////////////////////*/
+/* WORKING: */
+
+@-webkit-keyframes working{
+  from{-webkit-transform:rotate(0deg)}
+  to{-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes working{
+  from{-moz-transform:rotate(0deg)}
+  to{-moz-transform:rotate(360deg)}
+}
+@-ms-keyframes working{
+  from{-ms-transform:rotate(0deg)}
+  to{-ms-transform:rotate(360deg)}
+}
+@keyframes working{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
+.working {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 10px auto 10px auto;
+  border: 20px solid rgba(99,99,99,0.2);
+  border-top-color: rgba(154,205,50,0.9);
+  border-radius: 100%;
+  background: transparent;
+  z-index: 910;
+  animation: working 1s linear infinite;
+  -ms-animation: working 1s linear infinite;
+  -moz-animation: working 1s linear infinite;
+  -webkit-animation: working 1s linear infinite;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.working-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*height: 100%;*/
+  z-index: 910;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgba(9,9,9,0.2);
+}
+
+.working-container > .working {
+  top: calc(50% - 200px);
+  left: calc(50% - 50px);
+  top: -webkit-calc(50% - 200px);
+  left: -webkit-calc(50% - 50px);
+  position: absolute;
+}
+
+
+/*//////////////////////////////*/
+/*//////////////////////////////*/
+/* FORMS: */
+
+form .form-control {
+  /*height: 30px;*/
+  padding: 0 12px;
+  border-radius: 0;
+}
+form input.form-control,
+form .btn {
+  height: 30px;
+}
+
+form .btn {
+  padding: 0 12px;
+}
+
+form label {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-rendering: optimizeLegibility;
+}
+
+input[type="checkbox"] {
+  margin: 10px 0;
+}
+
+p.error {
+  color: red;
+  font-size: 11px;
+}
+
+.form-group {
+  margin: 0;
+}
+
+
+.nav-pills > li > a {
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.row {
+  margin: 0;
+}
+.center-text {
+  width: 100%;
+  text-align: center;
+}
+.grey-text {
+  color: #999;
+}
+
+.on-right {
+  float: right;
+}
+
+.indent-40 {
+  padding-left: 40px;
+}
+
+.as-button {
+  cursor: pointer;
+  outline: none;
+}
+.as-button:not([disabled]):hover {
+  color: yellowgreen;
+}
+.as-button:not([disabled]).hover-red:hover {
+  color: red;
+}
+.as-button[disabled] {
+  cursor: not-allowed;
+  color: #aaa;
+}
+

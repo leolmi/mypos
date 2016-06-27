@@ -1,0 +1,30 @@
+<div ng-controller="WayCtrl" class="modal-way">
+  <label>Title</label>
+  <input class="form-control" type="text" ng-model="modal.context.way.title">
+  <div class="form-group">
+    <label>Start from</label>
+    <select class="form-control" ng-model="modal.context.start"
+            ng-options="m.myPos.id as m.title for m in markers track by m.myPos.id"></select>
+  </div>
+  <label class="label-container">
+    Through
+    <i class="fa fa-plus-circle as-button" ng-click="addPoint()"></i>
+  </label>
+  <div ng-hide="modal.context.way.points.length" class="grey-text">no through points</div>
+  <div ng-repeat="p in modal.context.way.points" class="through-point">
+    <select class="form-control" ng-model="p.id"
+            ng-options="m.myPos.id as m.title for m in markers track by m.myPos.id"></select>
+    <i class="fa fa-times as-button" ng-click="removePoint(p)"></i>
+  </div>
+  <div class="form-group">
+    <label>Destination</label>
+    <select class="form-control" ng-model="modal.context.end"
+            ng-options="m.myPos.id as m.title for m in markers track by m.myPos.id"></select>
+  </div>
+  <label class="label-container">
+    Way mode
+    <i class="fa as-button" ng-class="getModeIcon()" ng-click="toggleMode()"></i>
+  </label>
+  <label>Notes</label>
+  <textarea class="form-control input-sm vertical" rows="3" ng-model="modal.context.way.notes"></textarea>
+</div>

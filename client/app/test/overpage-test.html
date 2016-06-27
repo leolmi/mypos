@@ -1,0 +1,14 @@
+<div class="overpage-test row" ng-controller="OPTestCtrl">
+  <search-box ng-model="searchText"></search-box>
+  <div class="op-test-items" height-offset="230">
+    <div class="op-test-item" ng-repeat="item in items | filter:searchText" >
+      <i class="fa fa-map-marker"></i>
+      <div class="op-test-item-title">{{item.title}}</div>
+    </div>
+  </div>
+  <div class="overpage-buttons">
+    <p>{{helpStr}}</p>
+    <i class="fa fa-camera as-button big-button" help-message="Share a snapshot"></i>
+    <i class="fa fa-code-fork as-button big-button" help-message="Share a route"></i>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.overpage-shared .search-box {
+  margin-bottom: 30px;
+}
+.overpage-shared .type-filter {
+  margin: -20px 0 20px 0;
+}
+
+.overpage-shared .shared-item {
+  padding: 20px 60px;
+  position: relative;
+  background: rgba(250,250,250,.7);
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.overpage-shared .shared-item.active {
+  /*background-color: darkorange;*/
+  background-color: rgba(123, 178, 0, 0.4);
+}
+.overpage-shared .shared-item > .shared-typeicon {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  font-size: 3em;
+}
+
+.overpage-shared .shared-item .shared-tool-button {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 3em;
+  display: none;
+}
+.overpage-shared .shared-item.active .shared-tool-button,
+.overpage-shared .shared-item .shared-tool-button.visible {
+  display: block;
+}
+.overpage-shared .shared-item .shared-tool-button.indent-right-1 {
+  right: 90px;
+}
+.overpage-shared .shared-item .shared-tool-button.indent-right-2 {
+  right: 160px;
+}
